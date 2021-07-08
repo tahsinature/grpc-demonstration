@@ -1,0 +1,5 @@
+
+syntax = "proto3";
+
+import "note.proto";
+import "master.proto";

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package Master;
+
+service AllService {
+  rpc GetTest(Empty) returns (Success);
+}
+
+message Empty {}
+
+message Success {
+  bool success = 1;
+}

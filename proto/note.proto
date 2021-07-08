@@ -1,0 +1,19 @@
+syntax = "proto3";
+package Note;
+
+service MasterService {
+  rpc GetUserNote(UserId) returns (Notes);
+}
+
+message UserId {
+  string user_id = 1;
+}
+
+message Note {
+  string title = 1;
+  string body = 2;
+}
+
+message Notes {
+  repeated Note notes = 1;
+}

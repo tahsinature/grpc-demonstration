@@ -1,0 +1,27 @@
+{
+  "name": "grpc-demon",
+  "version": "1.0.0",
+  "description": "- [ ] create 2 separate services: master, note - [ ] some talks about protocol buffer   - [ ] protobuf definitions   - [ ] never reuse the identifier - [ ] create proper gRPC structure in master service - [ ] copy all the structure to note service - [ ] call note service from master service - [ ] benchmark between gRPC & HTTP",
+  "main": "index.js",
+  "scripts": {
+    "master": "master/bin/run",
+    "note": "note/bin/run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.6.4",
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.12",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^16.0.0",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "grpc": "^1.24.10",
+    "morgan": "^1.10.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.5"
+  }
+}
