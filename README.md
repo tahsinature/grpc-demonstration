@@ -17,13 +17,13 @@
 
 > here is the result on my machine
 
-| Number of call | HTTP     | gRPC      |
-| -------------- | -------- | --------- |
-| 10             | 46.834ms | 8.897ms   |
-| 100            | 248.67ms | 38.919ms  |
-| 1000           | 1.746s   | 228.801ms |
-| 10000          | 17.038s  | 2.913s    |
-| 50000          | 187.042s | 15.179s   |
+| Number of Calls | HTTP     | gRPC      |
+| --------------- | -------- | --------- |
+| 10              | 46.834ms | 8.897ms   |
+| 100             | 248.67ms | 38.919ms  |
+| 1000            | 1.746s   | 228.801ms |
+| 10000           | 17.038s  | 2.913s    |
+| 50000           | 187.042s | 15.179s   |
 
 > of course the result may vary depending on your machine. my spec:
 >
