@@ -49,3 +49,9 @@ npm run note
 npx ts-node <file path>
 # npx ts-node others/playground.ts
 ```
+
+### To run benchmark
+
+```bash
+npm run benchmark
+```
