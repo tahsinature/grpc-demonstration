@@ -1,0 +1,4 @@
+[
+  { "user": "a", "notes": [{ "title": "note 1", "body": "first note" }] },
+  { "user": "a", "notes": [{ "title": "note 2", "body": "second note" }] }
+]
