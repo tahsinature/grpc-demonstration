@@ -1,13 +1,17 @@
-import { grpcClient } from './client'
 import axios from 'axios'
 
+import { grpcClient } from './client'
+import { askMultiInput, askNumber } from './prompt'
+
 const callGRPC = () => {
-  return new Promise((resolve, reject) => {
-    grpcClient.masterService.all({}, (err: any, res: any) => {
-      if (err) return reject(err)
-      resolve(res)
-    })
-  })
+  console.log(grpcClient.masterService)
+
+  // return new Promise((resolve, reject) => {
+  //   grpcClient.masterService.all({}, (err: any, res: any) => {
+  //     if (err) return reject(err)
+  //     resolve(res)
+  //   })
+  // })
 }
 
 const callHTTP = async () => {
@@ -15,16 +19,30 @@ const callHTTP = async () => {
 }
 
 const benchmark = async () => {
-  console.time('test')
-  const data = []
-  for (const i of Array(100)) {
-    const d = await callHTTP() // enable if wanna test with http call
-    // const d = await callGRPC() // enable if wanna test with grpc call
+  const { operation } = await askMultiInput(
+    [
+      { title: 'gRPC', value: 'gRPC' },
+      { title: 'HTTP', value: 'HTTP' }
+    ],
+    { message: 'What type of call you wanna make?' }
+  )
 
-    data.push(d)
+  const { number: numberOfCall } = await askNumber('How many call you wanna make?')
+
+  console.time('test')
+  const allData: any[] = []
+
+  for (let i = 0; i < numberOfCall; i++) {
+    let data: any
+    if (operation === 'gRPC') data = await callGRPC()
+    else if (operation === 'HTTP') data = await callHTTP()
+    else throw new Error('Invalid operation')
+
+    allData.push(data)
   }
+
   console.timeEnd('test')
-  console.log(data.length)
+  console.log(allData.length)
 }
 
 benchmark()
