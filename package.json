@@ -22,7 +22,11 @@
     "express": "^4.17.1",
     "grpc": "^1.24.10",
     "morgan": "^1.10.0",
+    "prompts": "^2.4.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.4.3"
   }
 }
