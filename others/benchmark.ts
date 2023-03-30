@@ -4,14 +4,12 @@ import { grpcClient } from './client'
 import { askMultiInput, askNumber } from './prompt'
 
 const callGRPC = () => {
-  console.log(grpcClient.masterService)
-
-  // return new Promise((resolve, reject) => {
-  //   grpcClient.masterService.all({}, (err: any, res: any) => {
-  //     if (err) return reject(err)
-  //     resolve(res)
-  //   })
-  // })
+  return new Promise((resolve, reject) => {
+    grpcClient.masterService.all.GetTest({}, (err: any, res: any) => {
+      if (err) return reject(err)
+      resolve(res)
+    })
+  })
 }
 
 const callHTTP = async () => {
